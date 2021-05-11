@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display the array values after the split.</p>
+Text: <input type="text" id="srcText" value="o1 test test test o1 test test o1"><br/>
+SubText: <input  type="text" id="subText" value="o1"><br/>
+<button onclick="myFunction()">Match</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  txt = document.getElementById("srcText").value;
+  yyy = document.getElementById("subText").value;
+  var regex =  new RegExp(yyy, 'g');
+//alert(txt.match(regex));
+  var matches = [];
+  var match = regex.exec(txt);
+  while (match != null)
+  {
+    matches.push(match.index);
+    match = regex.exec(txt);
+  }
+alert(matches);
+}
+</script>
+
+</body>
+</html>
